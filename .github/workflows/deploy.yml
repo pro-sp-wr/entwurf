@@ -30,4 +30,4 @@ jobs:
         # füge publish_branch: gh-pages hinzu. Standard ist gh-pages.
         # Wenn du direkt in den main-Branch veröffentlichen möchtest (für User/Organization Pages),
         # kannst du das hier konfigurieren (z.B. publish_branch: main)
-        publish_branch: main
+        publish_branch: main # Der Branch, auf dem die Website veröffentlicht wird
