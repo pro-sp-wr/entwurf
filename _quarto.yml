@@ -1,0 +1,65 @@
+project:
+  type: website
+
+language:
+  code: de-CH    # Sprachcode für Schweizer Deutsch
+  date-format: dd.MM.yyyy    # Schweizer Datumsformat
+  number-format: 1'234.56    # Schweizer Zahlenformat
+
+#author:
+#  - name: "IG Wirtschaft und Recht"
+
+website:
+  title: "Argumentarium"
+  navbar:
+    right:
+      - icon: "bi-twitter-x" # Oder ein anderes passendes Icon aus Bootstrap Icons
+        href: "javascript:window.open('https://twitter.com/intent/tweet?text=Interessante%20Informationen%20von%20der%20IG%20Wirtschaft%20und%20Recht&url=' + encodeURIComponent(window.location.href));"
+        aria-label: "Auf X teilen" # Für Barrierefreiheit
+      - icon: "bi-linkedin" # Bootstrap Icon für LinkedIn
+        href: "https://www.linkedin.com/shareArticle?mini=true&url=https://pro-sp-wr.github.io/argumentarium/&title=Argumentarium%20IG%20Wirtschaft%20und%20Recht"
+        aria-label: "Auf LinkedIn teilen" # Für Barrierefreiheit   
+      - icon: "bi-whatsapp" # Bootstrap Icon für WhatsApp
+        href: "javascript:window.open('https://wa.me/?text=' + encodeURIComponent('Interessante Informationen von der IG Wirtschaft und Recht: ' + window.location.href));"
+        aria-label: "Auf WhatsApp teilen"   
+      - icon: "bi-facebook" # Bootstrap Icon für Facebook
+        href: "javascript:window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href));"
+        aria-label: "Auf Facebook teilen"
+      - icon: "bi-reddit" # Bootstrap Icon für Reddit (falls vorhanden, ansonsten prüfen)
+        href: "javascript:window.open('https://www.reddit.com/submit?url=' + encodeURIComponent(window.location.href) + '&title=' + encodeURIComponent(document.title));"
+        aria-label: "Auf Reddit teilen"
+      - icon: "bi-mastodon" # Annahme für Bootstrap Icon
+        href: "javascript:window.open('https://toot.io/?text=' + encodeURIComponent('Interessante Informationen von der IG Wirtschaft und Recht: ' + window.location.href));"
+        aria-label: "Auf Mastodon teilen"
+    left:
+      - text: "Weitere Informationen"
+        menu:
+          - text: "Über uns"
+            href: about.qmd
+          - text: "Vollständiges Argumentarium"
+            href: ./argumente.qmd
+          - text: "Kontakt"
+            href: "https://forms.gle/Xa843z8yKTtiy4eB8"
+          - text: "Unterstützen"
+            href: "https://forms.gle/Qii7X7os3id8N1qK8"
+      
+      - text: "Ausgangslage"
+        href: index.qmd
+  body-footer: |
+    IG Wirtschaft und Recht
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    include-in-header: 
+      - https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css
+    language:
+      ui:
+        author: "Autor"
+        authors: "Autoren"
+        toc: "Inhaltsverzeichnis"
+
+
+

@@ -1,0 +1,9 @@
+/* css styles */
+.quarto-title-meta-heading:contains("AUTHOR")::before {
+  content: "Autor";
+  visibility: visible;
+}
+
+.quarto-title-meta-heading:contains("AUTHOR") {
+  visibility: hidden;
+}
