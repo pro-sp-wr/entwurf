@@ -1,0 +1,32 @@
+name: Deploy Quarto Website
+
+on:
+  push:
+    branches:
+      - main # Oder der Branch, den du für deinen Quellcode verwendest (z.B. master)
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest # Das Betriebssystem, auf dem der Job ausgeführt wird
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4 # Holt den Code aus deinem Repository
+
+    - name: Set up Quarto
+      uses: quarto-dev/setup-quarto@v2 # Installiert Quarto
+      with:
+        version: 'stable' # Installiert die neueste stabile Quarto-Version
+
+    - name: Render Quarto project
+      run: quarto render # Rendert deine Quarto-Website. Standardmässig wird der _site-Ordner erstellt.
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3 # Eine Action zum Veröffentlichen auf GitHub Pages
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }} # Benutzt den automatischen GitHub Token
+        publish_dir: ./_site # Das Verzeichnis, das veröffentlicht werden soll (der _site-Ordner)
+        # Wenn du einen anderen Branch für GitHub Pages verwendest (z.B. gh-pages),
+        # füge publish_branch: gh-pages hinzu. Standard ist gh-pages.
+        # Wenn du direkt in den main-Branch veröffentlichen möchtest (für User/Organization Pages),
+        # kannst du das hier konfigurieren (z.B. publish_branch: main)
